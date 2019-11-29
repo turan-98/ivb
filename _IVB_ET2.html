@@ -1,0 +1,67 @@
+<html>
+            <head>
+            <title>CESU</title>
+            <link rel="stylesheet" type="text/css" href="css/corAplicativos.css">
+            <link rel="icon" href="images/cps_brasao-076.png" sizes="32x32">
+			
+			<!--
+			
+			ATENÇÃO: o objeto textarea de "name" e "id" 'area1' precisa ser validado. 
+			Contudo, este nome é genérico usado para que o editor funcione. Por isso na hora do envio dos dados, o conteúdo necessita ir em um objeto de formulario de nome "ivb_justificat". Este objeto se encontra como objeto oculto (hidden).
+			OLHA O DESAFIO, AÍ...
+			
+			-->
+            <script type="text/javascript" src="js/nicEdit.js"></script>
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/script_valida.js"></script>
+            <script type="text/javascript">
+                bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+            </script>
+            <meta charset="UTF-8">
+            </head>
+            <body>
+
+            <div id="pdi_cont">
+                <div id="pdi_titulo">Formul&aacute;rio IV.B - Cursos Existentes 
+            </div>
+
+            <div id="pdi_contT1">
+        	<span class="fCourier">Registrar Curso Existente. [Etapa 2 de 14]</span>
+	        <br /><br />
+            <form name="fivb" id="fivb" method="post" action="corHaeAdmForm.php">
+            <input type="hidden" name="urlRet" value="p_form_ivb.php" />
+            <input type="hidden" name="tbl_pdi_ivb" value="tbl_pdi_ivb" />
+            <input type="hidden" name="CRUD" value="U" />
+            <input type="hidden" name="etapa" value="2" />
+            <input type="hidden" name="ivb_id" value="" />
+            <input type="hidden" name="RCG" value="" />
+            <input type="hidden" name="NumFatec" value="" />
+            <input type="hidden" name="Regional" value="" />
+            <input type="hidden" name="EscolaCodigo" value="" />
+			<!-- -->
+			<input type="hidden" name="ivb_justificat" value="" />
+			<!-- -->
+            <p><span class="fCourier2"><span class="fBold">8.</span> Indique a quantidade de auxiliares para cada ano vigente do PDI: <i>(ex: 2019 - 2; 2020 - 1)</i></span><br />
+            <input type="text" name="ivb_qtd_anovigencia" id="ivb_qtd_anovigencia" value="" class="blt"  required="required">
+            </p>
+           
+            <p><span class="fCourier2"><span class="fBold">9.</span> Justifique a solicita&ccedil;&atilde;o: </span><br />
+            <textarea name="area1" id="area1" cols="110" rows="15"></textarea>
+            </p>
+            
+            <br />
+            <button class="buttonMenu">Enviar [2 de 14]</button>
+            </form>
+            <br />
+            <br />
+        <button class="configButton" disabled="true" onclick="window.open('p_form_ivb.php?recuo=1&etapa=1&ivb_id=209', '_self')" title="Voltar"  text="Voltar" style="cursor: hand;" /><img src="images/seta_branco_ab_01.gif"  alt="Voltar" /></button>
+        
+        <br /><br />
+
+
+        </div>
+
+        <br /><br />
+
+        </body>
+        </html>
